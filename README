@@ -3,6 +3,6 @@ Environment：
 Usage:
     python Xdiff.py file1 file2   #Show the diff type between file1 and file2
     python Xdiff.py dir1 dir2     #Show the diff type between dir1 and dir2
-General Options:")
+General Options:
     python Xdiff.py -h                             #Show help
     python Xdiff.py [file1/dir1] [file2/dir2] -s   #Show the diff code
