@@ -9,7 +9,7 @@
 #### General Options:
     python Xdiff.py -h                             #Show help
     python Xdiff.py [file1/dir1] [file2/dir2] -s   #Show the diff code
-#### diff modification types:
+#### Diff Modification Types:
 ##### 1.Add Condition
 ##### 2.Delete Condition
 ##### 3.Update Condition
