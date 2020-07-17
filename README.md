@@ -1,5 +1,5 @@
 ## Xdiff
-#### Xdiff is a tool to identify diff modification types. The operating environment and usage are as follows.Please make sure that the two filenames that you compare are the same. And you should make sure the file names are the same in both folders.
+##### Xdiff is a tool to identify diff modification types. The operating environment and usage are as follows.Please make sure that the two filenames that you compare are the same. And you should make sure the file names are the same in both folders.
 
 #### Environment： 
 	python-linux-2.7
