@@ -6,14 +6,17 @@ import re,os,sys
 function_return_type = r'''
             (\s*)
             (\s*(static)?\s*)
+            (\s*(const)?\s*)
+            (\s*(volatile)?\s*)
             (\s*(inline)?\s*)
-            ((VOID)|(void)|(char)|(short)|(int)|(float)|(long)|(double)|(bool)|(wait_queue_t)|(wait_queue_head_t)) # 识别函数返回值类型
+            (\s*(extern)?\s*)
+            ((VOID)|(void)|(char)|(short)|(int)|(float)|(long)|(double)|(bool)|(enum)|(wait_queue_t)|(wait_queue_head_t)) # 识别函数返回值类型
             (\s*(\*)?\s*)                                                       # 识别返回值是否为指针类型以及中间是否包含空格
             (\w+)                                                               # 识别函数名
             ((\s*)(\()(\n)?)                                                    # 函数开始小括号
-            (((\s*)?(const)?(unsigned)?(\s*)?                                   # 参数前是否有const、unsigned
-            ((void)|(char)|(short)|(int)|(float)|(long)|(double)|(bool)|(wait_queue_t)|(wait_queue_head_t)))?
-            ((\s*)(const)?(\s*)(struct)(\s*))?
+            (((\s*)?(const)?(unsigned)?(signed)?(\s*)?                                   # 参数前是否有const、unsigned
+            ((void)|(char)|(short)|(int)|(float)|(long)|(double)|(bool)|(enum)|(wait_queue_t)|(wait_queue_head_t)))?
+            ((\s*)(const)?(\s*)(struct)(\s*))?(union\s*\w+)?
             (\s*)(\*)?(\s*)?(restrict)?(\s*)?(\w+)(\s*)?(\,)?(\n)?(.*)?)*       # 最后的*表示有多个参数
             ((\s*)(\))(\n)?)                                                    # 函数结束小括号
             '''
